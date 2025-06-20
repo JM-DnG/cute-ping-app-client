@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative h-screen flex flex-col items-center justify-center bg-pink-50">
+    <div className="relative h-screen flex flex-col items-center justify-center bg-pink-50 overflow-hidden">
       {!joined ? (
         <>
           <h1 className="text-2xl font-bold">Enter Access Code</h1>
@@ -63,19 +63,21 @@ export default function App() {
       )}
 
       {showVideo && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 z-50">
-          <p className="text-white text-xl mb-4 font-semibold animate-pulse">
-            Quick break po, You need it!
-          </p>
-          <video
-            src="/pingVideo.mp4"
-            autoPlay
-            loop
-            className="max-w-md rounded-xl shadow-xl mb-4"
-          />
-          <Button onClick={() => setShowVideo(false)} variant="destructive">
-            End Video
-          </Button>
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-50 overflow-y-auto">
+          <div className="flex flex-col items-center justify-center min-h-screen p-6">
+            <p className="text-white text-xl mb-4 font-semibold animate-pulse text-center">
+              Quick break po, You need it!
+            </p>
+            <video
+              src="/pingVideo.mp4"
+              autoPlay
+              loop
+              className="max-w-md rounded-xl shadow-xl mb-4"
+            />
+            <Button onClick={() => setShowVideo(false)} variant="destructive">
+              End Video
+            </Button>
+          </div>
         </div>
       )}
     </div>
