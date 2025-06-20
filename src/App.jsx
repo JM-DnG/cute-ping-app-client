@@ -48,10 +48,10 @@ export default function App() {
           <Input
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            className="w-64"
+            className="w-64 my-2"
           />
           <Button onClick={handleJoin}>Join</Button>
-          {error && <p className="text-red-500">{error}</p>}
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </>
       ) : (
         <>
@@ -64,6 +64,9 @@ export default function App() {
 
       {showVideo && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 z-50">
+          <p className="text-white text-xl mb-4 font-semibold animate-pulse">
+            Quick break po, You need it!
+          </p>
           <video
             src="/pingVideo.mp4"
             autoPlay
